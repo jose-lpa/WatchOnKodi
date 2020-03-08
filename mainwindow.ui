@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string notr="true">Watch on Kodi</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QLineEdit" name="lineEditURL">
@@ -76,10 +76,11 @@
    </property>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
-     <string>Edit</string>
+     <string>Options</string>
     </property>
     <addaction name="actionConfigure"/>
     <addaction name="separator"/>
+    <addaction name="actionQuit"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -87,7 +88,7 @@
     </property>
     <addaction name="actionUsage"/>
     <addaction name="separator"/>
-    <addaction name="actionAbout_2"/>
+    <addaction name="actionAbout"/>
    </widget>
    <addaction name="menuEdit"/>
    <addaction name="menuHelp"/>
@@ -97,19 +98,22 @@
     <string>Configure</string>
    </property>
   </action>
-  <action name="actionAbout">
-   <property name="text">
-    <string>About</string>
-   </property>
-  </action>
   <action name="actionUsage">
    <property name="text">
     <string>Usage</string>
    </property>
   </action>
-  <action name="actionAbout_2">
+  <action name="actionAbout">
    <property name="text">
     <string>About</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
    </property>
   </action>
  </widget>
