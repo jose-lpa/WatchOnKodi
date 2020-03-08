@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMessageBox>
 #include <QtNetwork/QNetworkAccessManager>
 #include <QtNetwork/QNetworkRequest>
 #include <QUrl>
@@ -28,7 +29,7 @@ private:
     QNetworkAccessManager *manager;
     QNetworkRequest request;
 
-    void showMessage(QString message);
+    void showMessage(QString message, QMessageBox::Icon icon);
 };
 
 #endif // MAINWINDOW_H

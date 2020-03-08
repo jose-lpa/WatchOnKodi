@@ -17,10 +17,10 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(manager, &QNetworkAccessManager::finished, this,
             [=](QNetworkReply *reply) {
         if (reply->error()) {
-            showMessage(reply->errorString());
+            showMessage(reply->errorString(), QMessageBox::Critical);
             return;
         } else {
-            showMessage("Opening video in Kodi...");
+            showMessage("Opening video in Kodi...", QMessageBox::Information);
         }
     });
 
@@ -60,10 +60,11 @@ void MainWindow::on_pushButtonWatch_clicked()
     manager->post(request, jsonBody);
 }
 
-void MainWindow::showMessage(QString message)
+void MainWindow::showMessage(QString message, QMessageBox::Icon icon)
 {
     QMessageBox messageBox;
 
     messageBox.setText(message);
+    messageBox.setIcon(icon);
     messageBox.exec();
 }
