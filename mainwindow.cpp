@@ -97,3 +97,15 @@ void MainWindow::on_actionAbout_triggered()
            "<br>The source code is available in "
            "<a href=\"https://github.com/jose-lpa/WatchOnKOdi\">GitHub</a>.");
 }
+
+void MainWindow::on_actionUsage_triggered()
+{
+    QMessageBox::information(
+                this, "Usage",
+                "<b>Usage instructions:</b><br><br>"
+                "<ol>"
+                "<li>Configure access to Kodi server endpoint using the "
+                "\"Configure\" menu option.</li>"
+                "<li>Write down the video URL.</li>"
+                "<li>Click \"Watch\" button.");
+}
