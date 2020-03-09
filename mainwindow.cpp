@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 
 #include <QByteArray>
+#include <QDir>
 #include <QMessageBox>
 #include <QtNetwork/QAuthenticator>
 #include <QtNetwork/QNetworkReply>
@@ -11,6 +12,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    // Load settings.
+    configSettings = new Settings();
+    if (!configSettings->checkSettingsFile()) {
+        showMessage("Configure access to Kodi before sending videos.",
+                    QMessageBox::Information);
+    }
 
     manager = new QNetworkAccessManager();
 
@@ -23,11 +31,10 @@ MainWindow::MainWindow(QWidget *parent) :
             showMessage("Opening video in Kodi...", QMessageBox::Information);
         }
     });
-
     connect(manager, &QNetworkAccessManager::authenticationRequired, this,
             [=](QNetworkReply *reply, QAuthenticator *authenticator) {
-        authenticator->setUser("cloudigital");
-        authenticator->setPassword("kodi");
+        authenticator->setUser(configSettings->getUser());
+        authenticator->setPassword(configSettings->getPassword());
     });
 }
 
@@ -51,7 +58,9 @@ void MainWindow::on_pushButtonWatch_clicked()
     QByteArray videoUrl = ui->lineEditURL->text().toUtf8();
     QByteArray jsonBody = "{\"jsonrpc\":\"2.0\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"" + videoUrl + "\"}},\"id\":1}";
 
-    request.setUrl(QUrl("http://192.168.0.200:8080/jsonrpc"));
+    request.setUrl(
+                QUrl("http://" + configSettings->getAddress() +
+                     ":" + configSettings->getPort() + "/jsonrpc"));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
     request.setHeader(
                 QNetworkRequest::ContentLengthHeader,
@@ -67,4 +76,10 @@ void MainWindow::showMessage(QString message, QMessageBox::Icon icon)
     messageBox.setText(message);
     messageBox.setIcon(icon);
     messageBox.exec();
+}
+
+void MainWindow::on_actionConfigure_triggered()
+{
+    settingsDialog = new SettingsDialog(this, configSettings);
+    settingsDialog->show();
 }

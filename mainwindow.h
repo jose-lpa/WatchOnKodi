@@ -7,6 +7,9 @@
 #include <QtNetwork/QNetworkRequest>
 #include <QUrl>
 
+#include "settings.h"
+#include "settingsdialog.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -23,11 +26,14 @@ private slots:
     void on_pushButtonClear_clicked();
     void on_actionQuit_triggered();
     void on_pushButtonWatch_clicked();
+    void on_actionConfigure_triggered();
 
 private:
     Ui::MainWindow *ui;
     QNetworkAccessManager *manager;
     QNetworkRequest request;
+    Settings *configSettings;
+    SettingsDialog *settingsDialog;
 
     void showMessage(QString message, QMessageBox::Icon icon);
 };
