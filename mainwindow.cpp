@@ -83,3 +83,17 @@ void MainWindow::on_actionConfigure_triggered()
     settingsDialog = new SettingsDialog(this, configSettings);
     settingsDialog->show();
 }
+
+void MainWindow::on_actionAbout_triggered()
+{
+    QMessageBox::about(
+           this, "About Watch On Kodi",
+           "<b>Minimal desktop app to send a video link to a Kodi system "
+           "to reproduce it.</b><br>"
+           "<br>Written using Qt5 C++ framework.<br>"
+           "<br>This program is licensed under GPL version 3. You can read "
+           "<a href=\"https://www.gnu.org/licenses/gpl-3.0.html\">here</a>"
+           " the license terms.<br>"
+           "<br>The source code is available in "
+           "<a href=\"https://github.com/jose-lpa/WatchOnKOdi\">GitHub</a>.");
+}
