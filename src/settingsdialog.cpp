@@ -9,6 +9,15 @@ SettingsDialog::SettingsDialog(QWidget *parent, Settings *settings) :
 
     configSettings = settings;
 
+    // Validate IP address input.
+    QString ipRange = "(?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])";
+    QRegularExpression ipRegex(
+                "^" + ipRange + "\\." + ipRange + "\\." + ipRange + "\\."
+                + ipRange + "$");
+    QRegularExpressionValidator *ipValidator = new QRegularExpressionValidator(
+                ipRegex);
+
+    ui->lineEditAddress->setValidator(ipValidator);
     ui->lineEditAddress->setText(configSettings->getAddress());
     ui->spinBoxPort->setValue(configSettings->getPort().toInt());
     ui->lineEditUser->setText(configSettings->getUser());
