@@ -20,7 +20,6 @@ public:
             QString _password);
 
 private:
-    QString settingsFile;
     QString address = "";
     QString port = "";
     QString username = "";
