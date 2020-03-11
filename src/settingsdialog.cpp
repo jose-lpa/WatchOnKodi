@@ -10,7 +10,7 @@ SettingsDialog::SettingsDialog(QWidget *parent, Settings *settings) :
     configSettings = settings;
 
     ui->lineEditAddress->setText(configSettings->getAddress());
-    ui->lineEditPort->setText(configSettings->getPort());
+    ui->spinBoxPort->setValue(configSettings->getPort().toInt());
     ui->lineEditUser->setText(configSettings->getUser());
     ui->lineEditPassword->setText(configSettings->getPassword());
 }
@@ -29,7 +29,7 @@ void SettingsDialog::on_buttonBox_accepted()
 {
     configSettings->saveSettings(
                 ui->lineEditAddress->text(),
-                ui->lineEditPort->text(),
+                ui->spinBoxPort->text(),
                 ui->lineEditUser->text(),
                 ui->lineEditPassword->text());
 

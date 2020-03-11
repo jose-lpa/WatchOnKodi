@@ -59,13 +59,41 @@
         <height>0</height>
        </size>
       </property>
+      <property name="maximumSize">
+       <size>
+        <width>65</width>
+        <height>25</height>
+       </size>
+      </property>
       <property name="text">
        <string>Port</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="lineEditPort"/>
+     <widget class="QSpinBox" name="spinBoxPort">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>268</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>65535</number>
+      </property>
+      <property name="value">
+       <number>8080</number>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -87,13 +115,26 @@
         <height>0</height>
        </size>
       </property>
+      <property name="maximumSize">
+       <size>
+        <width>65</width>
+        <height>25</height>
+       </size>
+      </property>
       <property name="text">
        <string>User</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="lineEditUser"/>
+     <widget class="QLineEdit" name="lineEditUser">
+      <property name="maximumSize">
+       <size>
+        <width>268</width>
+        <height>22</height>
+       </size>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -109,6 +150,18 @@
    <layout class="QHBoxLayout" name="horizontalLayoutPassword">
     <item>
      <widget class="QLabel" name="labelPassword">
+      <property name="minimumSize">
+       <size>
+        <width>65</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>65</width>
+        <height>25</height>
+       </size>
+      </property>
       <property name="text">
        <string>Password</string>
       </property>
@@ -116,6 +169,12 @@
     </item>
     <item>
      <widget class="QLineEdit" name="lineEditPassword">
+      <property name="maximumSize">
+       <size>
+        <width>268</width>
+        <height>22</height>
+       </size>
+      </property>
       <property name="inputMethodHints">
        <set>Qt::ImhHiddenText|Qt::ImhNoAutoUppercase|Qt::ImhNoPredictiveText|Qt::ImhSensitiveData</set>
       </property>
@@ -141,7 +200,13 @@
       <property name="minimumSize">
        <size>
         <width>65</width>
-        <height>0</height>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>65</width>
+        <height>25</height>
        </size>
       </property>
       <property name="text">
@@ -150,7 +215,14 @@
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="lineEditAddress"/>
+     <widget class="QLineEdit" name="lineEditAddress">
+      <property name="maximumSize">
+       <size>
+        <width>268</width>
+        <height>22</height>
+       </size>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
