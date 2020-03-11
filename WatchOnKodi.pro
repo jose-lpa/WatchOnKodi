@@ -39,7 +39,7 @@ FORMS += \
         src/ui/mainwindow.ui \
         src/ui/settingsdialog.ui
 
-DESTDIR = $$PWD/../binaries/$$DESTINATION_PATH
+DESTDIR = $$PWD/binaries/$$DESTINATION_PATH
 OBJECTS_DIR = $$PWD/build/$$DESTINATION_PATH/.obj
 MOC_DIR = $$PWD/build/$$DESTINATION_PATH/.moc
 RCC_DIR = $$PWD/build/$$DESTINATION_PATH/.qrc
