@@ -2,7 +2,6 @@
 #include "ui_mainwindow.h"
 
 #include <QByteArray>
-#include <QDir>
 #include <QMessageBox>
 #include <QtNetwork/QAuthenticator>
 #include <QtNetwork/QNetworkReply>
