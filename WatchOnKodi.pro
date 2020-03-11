@@ -39,6 +39,14 @@ FORMS += \
         src/ui/mainwindow.ui \
         src/ui/settingsdialog.ui
 
+DESTDIR = $$PWD/../binaries/$$DESTINATION_PATH
+OBJECTS_DIR = $$PWD/build/$$DESTINATION_PATH/.obj
+MOC_DIR = $$PWD/build/$$DESTINATION_PATH/.moc
+RCC_DIR = $$PWD/build/$$DESTINATION_PATH/.qrc
+UI_DIR = $$PWD/build/$$DESTINATION_PATH/.ui
+
+message(binary output dir: $${DESTDIR})
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin

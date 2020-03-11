@@ -1,3 +1,4 @@
 *.autosave
+build/
 .*.swp
 WatchOnKodi.pro.user
