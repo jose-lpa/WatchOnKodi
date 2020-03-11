@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>579</width>
-    <height>134</height>
+    <width>599</width>
+    <height>170</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string notr="true">Watch on Kodi</string>
@@ -41,7 +47,7 @@
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>60</y>
+      <y>80</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -54,7 +60,7 @@
     <property name="geometry">
      <rect>
       <x>210</x>
-      <y>60</y>
+      <y>80</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -70,8 +76,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>579</width>
-     <height>22</height>
+     <width>599</width>
+     <height>17</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuEdit">
